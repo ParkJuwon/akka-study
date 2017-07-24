@@ -16,6 +16,7 @@ public class Main {
 	/** 백엔드 서비스 역할을 수행하는 PingService 액터를 생성한다. */
     public static void main(String[] args) {
         ActorSystem actorSystem = ActorSystem.create("ClusterSystem");
+        // node2에서는 pingService는 불필요 할듯?
         ActorRef pingService = actorSystem.actorOf(Props.create(PingService.class), "pingService");
     }
 }
